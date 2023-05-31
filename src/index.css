@@ -32,3 +32,86 @@ a:hover,
 nav button:hover {
     color: #11833e !important;
 }
+
+/* Form Styles */
+
+form {
+    max-width: 30%;
+    margin: 0 auto;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1px;
+}
+
+label span {
+    margin-bottom: 0.3em;
+    font-weight: bold;
+    text-align: left;
+    color: #11833e;
+}
+
+input,
+textarea {
+    box-sizing: border-box;
+    border: none;
+    padding: 0.8em 0;
+    border-color: transparent;
+}
+
+.btn {
+    background-color: #11833e;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    width: 120px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 1em;
+    transition: all 0.3s;
+}
+
+.btn.btn-dark {
+    background-color: #000;
+    border-radius: 0;
+}
+
+.btn.btn-outline {
+    background-color: transparent;
+    border-radius: 0;
+    border: 1px solid #11833e;
+    color: #11833e;
+}
+
+.btn:hover {
+    background-color: transparent;
+    border: 1px solid #11833e;
+    color: #11833e;
+}
+
+.btn.btn-dark:hover {
+    background-color: #11833e;
+    color: #fff;
+}
+
+.btn.btn-danger:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+button[disabled] {
+    background-color: #ccc;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.container .error {
+    color: #951f1f;
+    background-color: #f0d8d8;
+    border: 1px solid #f0d8d8;
+    border-radius: 5px;
+}

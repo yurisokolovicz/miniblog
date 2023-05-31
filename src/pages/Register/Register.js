@@ -5,7 +5,7 @@ import styles from './Register.module.css';
 const Register = () => {
     return (
         <>
-            <h1>Register</h1>
+            <h1>Registration</h1>
             <p>Create your account</p>
             <form>
                 <label>
