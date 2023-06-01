@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 
+import { useAuthentication } from '../../hooks/useAuthentication';
 import styles from './Register.module.css';
 
 const Register = () => {
@@ -9,7 +10,9 @@ const Register = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
 
-    const handleSubmit = e => {
+    const { createUser, error: authError, loading } = useAuthentication();
+
+    const handleSubmit = async e => {
         e.preventDefault();
 
         setError('');
@@ -26,8 +29,17 @@ const Register = () => {
             return;
         }
 
-        console.log(user);
+        const res = await createUser(user);
+
+        console.log(res);
     };
+
+    // To check if setError() changes the state, if so, useEffect() will run and display the error message.
+    useEffect(() => {
+        if (authError) {
+            setError(authError.message);
+        }
+    }, [authError]);
 
     return (
         <div className={styles.register}>
@@ -78,7 +90,12 @@ const Register = () => {
                         onChange={e => setConfirmPassword(e.target.value)}
                     />
                 </label>
-                <button className="btn">Register</button>
+                {!loading && <button className="btn">Register</button>}
+                {loading && (
+                    <button className="btn" disabled>
+                        Wait...
+                    </button>
+                )}
                 {error && <p className="error">{error}</p>}
             </form>
         </div>
