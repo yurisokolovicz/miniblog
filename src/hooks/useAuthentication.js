@@ -43,15 +43,15 @@ export const useAuthentication = () => {
 
             if (error.message.includes('Password')) {
                 systemErrorMessage = 'Password must be at least 6 characters long';
-            } else if (error.message.includes('email')) {
-                systemErrorMessage = 'Email is not valid';
+            } else if (error.message.includes('email-already-in-use')) {
+                systemErrorMessage = 'Email already in use';
             } else {
                 systemErrorMessage = 'Something went wrong';
             }
 
-            setLoading(false);
             setError(systemErrorMessage);
         }
+        setLoading(false);
     };
     // Cleanup, prevent memory leaks. Increase performance.
     useEffect(() => {

@@ -20,8 +20,7 @@ const Register = () => {
         const user = {
             displayName,
             email,
-            password,
-            confirmPassword
+            password
         };
         // validation
         if (password !== confirmPassword) {
@@ -37,7 +36,7 @@ const Register = () => {
     // To check if setError() changes the state, if so, useEffect() will run and display the error message.
     useEffect(() => {
         if (authError) {
-            setError(authError.message);
+            setError(authError);
         }
     }, [authError]);
 
