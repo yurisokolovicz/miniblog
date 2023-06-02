@@ -19,6 +19,8 @@ export const useAuthentication = () => {
             return;
         }
     }
+
+    /////////////////// REGISTER ///////////////////
     // A função createUser é definida como uma função assíncrona que recebe um objeto data contendo informações do usuário, como email, password e displayName.
     const createUser = async data => {
         // Antes de iniciar a operação de criação do usuário, a função verifica se a operação foi cancelada.
@@ -59,6 +61,14 @@ export const useAuthentication = () => {
     };
     // Cleanup, prevent memory leaks. Increase performance.
     // Em seguida, é declarado um efeito utilizando a função useEffect. O efeito é executado apenas uma vez, quando o componente é montado, e retorna uma função que será executada quando o componente for desmontado. Essa função define o estado cancelled como verdadeiro, evitando possíveis vazamentos de memória.
+
+    /////////////////// LOGOUT ///////////////////
+    const logout = () => {
+        checkIfIsCancelled();
+
+        signOut(auth);
+    };
+
     useEffect(() => {
         return () => {
             setCancelled(true);
@@ -69,7 +79,8 @@ export const useAuthentication = () => {
         auth,
         createUser,
         error,
-        loading
+        loading,
+        logout
     };
 };
 

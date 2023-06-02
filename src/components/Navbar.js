@@ -8,6 +8,7 @@ import styles from './Navbar.module.css';
 const Navbar = () => {
     // o user esta sendo compartilhado com todos os componentes que estão dentro do AuthProvider no App.js
     const { user } = useAuthValue();
+    const { logout } = useAuthentication(); // importando a função logout do custom hook useAuthentication.
 
     return (
         <nav className={styles.navbar}>
@@ -54,6 +55,11 @@ const Navbar = () => {
                         About
                     </NavLink>
                 </li>
+                {user && (
+                    <li>
+                        <button onClick={logout}>Logout</button>
+                    </li>
+                )}
             </ul>
         </nav>
     );
