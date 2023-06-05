@@ -80,6 +80,10 @@ textarea {
     border-radius: 10px;
 }
 
+.btn.btn-search {
+    padding: 5px 10px;
+}
+
 .btn.btn-outline {
     background-color: transparent;
     border-radius: 0;
