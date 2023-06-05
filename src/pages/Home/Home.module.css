@@ -13,6 +13,10 @@
     margin-bottom: 2em;
 }
 
+.search_form button {
+    margin-top: 7px;
+}
+
 .search_form input {
     margin-right: 10px;
     width: 50%;
