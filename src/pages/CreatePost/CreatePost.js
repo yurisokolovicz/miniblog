@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthValue } from '../../context/AuthContext';
+import { UseInsertDocument } from '../../hooks/useInsertDocument';
 
 import styles from './CreatePost.module.css';
 
@@ -11,8 +12,31 @@ const CreatePost = () => {
     const [tags, setTags] = useState([]);
     const [formError, setFormError] = useState('');
 
+    const { user } = useAuthValue();
+
+    // posts is the name of the collection (docCollection)
+    const { insertDocument, response } = UseInsertDocument('posts');
+
     const handleSubmit = e => {
         e.preventDefault();
+        setFormError('');
+
+        // validate image url
+
+        // create the tags array
+
+        // check if all the values are not empty
+
+        insertDocument({
+            title,
+            image,
+            body,
+            tags,
+            uid: user.uid,
+            createdBy: user.displayName
+        });
+
+        // redirect to home page
     };
 
     return (
@@ -63,14 +87,13 @@ const CreatePost = () => {
                         value={tags}
                     ></input>
                 </label>
-                <button className="btn">Register</button>
-                {/* {!loading && <button className="btn">Register</button>}
-                {loading && (
+                {!response.loading && <button className="btn">Register</button>}
+                {response.loading && (
                     <button className="btn" disabled>
                         Wait...
                     </button>
                 )}
-                {error && <p className="error">{error}</p>} */}
+                {response.error && <p className="error">{response.error}</p>}
             </form>
         </div>
     );

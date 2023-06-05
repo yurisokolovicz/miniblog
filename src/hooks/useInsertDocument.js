@@ -22,7 +22,8 @@ const insertReducer = (state, action) => {
     }
 };
 
-export const userInsertDocument = docCollection => {
+// The function that uses hooks should start with the capital letter: UseInsertDocument
+export const UseInsertDocument = docCollection => {
     const [response, dispatch] = useReducer(insertReducer, initialState);
 
     // Deal with memory leaks
