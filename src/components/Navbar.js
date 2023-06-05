@@ -14,7 +14,7 @@ const Navbar = () => {
         <nav className={styles.navbar}>
             <NavLink to="/" className={styles.brand}>
                 {/* Mini <span>Blog</span> */}
-                <img src={Logo} alt="Logo" />
+                <img className={styles.logo_img} src={Logo} alt="Logo" />
             </NavLink>
             <ul className={styles.links_list}>
                 <li>
