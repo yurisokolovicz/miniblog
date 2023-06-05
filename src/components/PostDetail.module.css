@@ -4,6 +4,7 @@
 
 .post_detail img {
     max-width: 600px;
+    border-radius: 50px;
 }
 
 .post_detail h2 {
@@ -25,6 +26,12 @@
 
 .createdby {
     font-style: italic;
+    color: #444;
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+
+.body {
     color: #444;
     font-size: 0.8em;
     margin-bottom: 1em;
