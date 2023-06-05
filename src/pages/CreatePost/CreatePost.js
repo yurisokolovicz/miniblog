@@ -17,26 +17,41 @@ const CreatePost = () => {
     // posts is the name of the collection (docCollection)
     const { insertDocument, response } = UseInsertDocument('posts');
 
+    const navigate = useNavigate();
+
     const handleSubmit = e => {
         e.preventDefault();
         setFormError('');
 
         // validate image url
+        try {
+            new URL(image);
+        } catch (error) {
+            setFormError('The image URL is not valid');
+            return;
+        }
 
         // create the tags array
+        const tagsArray = tags.split(',').map(tag => tag.trim().toLowerCase());
 
         // check if all the values are not empty
+        if (!title || !image || !body || !tags) {
+            setFormError('All the fields are required');
+        }
+
+        if (formError) return;
 
         insertDocument({
             title,
             image,
             body,
-            tags,
+            tagsArray,
             uid: user.uid,
             createdBy: user.displayName
         });
 
         // redirect to home page
+        navigate('/');
     };
 
     return (
@@ -94,6 +109,7 @@ const CreatePost = () => {
                     </button>
                 )}
                 {response.error && <p className="error">{response.error}</p>}
+                {formError && <p className="error">{formError}</p>}
             </form>
         </div>
     );
