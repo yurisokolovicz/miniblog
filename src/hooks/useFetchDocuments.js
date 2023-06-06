@@ -48,7 +48,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
         }
 
         loadData(); // We need to call the function to execute it, it will only be executed if the dependencies change (doCollection, search, uid, cancelled).
-    }, [docCollection, search, uid, cancelled]);
+    }, [docCollection, documents, search, uid, cancelled]);
 
     // Deal with memory leaks
     // The return function will be executed when the component is unmounted. It prevents the component from trying to set the state after it has been unmounted.
