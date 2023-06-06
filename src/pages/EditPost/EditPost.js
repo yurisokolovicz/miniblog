@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuthValue } from '../../context/AuthContext';
-import { UseInsertDocument } from '../../hooks/useInsertDocument';
 import { useFetchDocument } from '../../hooks/useFetchDocument';
+import { UseUpdatetDocument } from '../../hooks/useUpdateDocument'; // Reducer
 
 import styles from './EditPost.module.css';
 
@@ -30,7 +30,7 @@ const EditPost = () => {
     const { user } = useAuthValue();
 
     // posts is the name of the collection (docCollection)
-    const { insertDocument, response } = UseInsertDocument('posts');
+    const { updateDocument, response } = UseUpdatetDocument('posts');
 
     const navigate = useNavigate();
 
@@ -56,17 +56,19 @@ const EditPost = () => {
 
         if (formError) return;
 
-        insertDocument({
+        const data = {
             title,
             image,
             body,
             tagsArray,
             uid: user.uid,
             createdBy: user.displayName
-        });
+        };
+
+        updateDocument(id, data);
 
         // redirect to home page
-        navigate('/');
+        navigate('/dashboard');
     };
 
     return (
