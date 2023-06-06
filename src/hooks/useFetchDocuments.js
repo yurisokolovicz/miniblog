@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { db } from '../firebase/config';
-import { collection, query, orderBy, onSnapshot, where, QuerySnapshot } from 'firebase/firestore';
+import { collection, query, orderBy, onSnapshot, where } from 'firebase/firestore';
 
 // We did not use useReducer here because we are not going to handle any reducer events (actions). We are just going to fetch data from the database.
 export const useFetchDocuments = (docCollection, search = null, uid = null) => {
@@ -13,7 +13,9 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
 
     useEffect(() => {
         async function loadData() {
-            if (cancelled) return;
+            if (cancelled) {
+                return;
+            }
 
             setLoading(true);
 
