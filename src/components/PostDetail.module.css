@@ -36,3 +36,47 @@
     font-size: 0.8em;
     margin-bottom: 1em;
 }
+
+@media (max-width: 767px) {
+    .post_detail {
+        margin-bottom: 1em;
+    }
+
+    .post_detail img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    .post_detail h2 {
+        margin-bottom: 0.3em;
+        font-size: 1.2em;
+    }
+
+    .post_detail .tags {
+        margin-bottom: 0.8em;
+        flex-wrap: wrap;
+    }
+
+    .tags p {
+        margin-right: 0.3em;
+        margin-bottom: 0.3em;
+        font-size: 0.8em;
+    }
+
+    .tags span {
+        font-weight: bold;
+    }
+
+    .createdby {
+        font-style: italic;
+        color: #444;
+        font-size: 0.7em;
+        margin-bottom: 0.8em;
+    }
+
+    .body {
+        color: #444;
+        font-size: 0.8em;
+        margin-bottom: 0.8em;
+    }
+}
