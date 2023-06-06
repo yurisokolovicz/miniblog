@@ -24,6 +24,8 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
 
                 if (search) {
                     q = await query(collectionRef, where('tagsArray', 'array-contains', search), orderBy('createdAt', 'desc'));
+                } else if (uid) {
+                    q = await query(collectionRef, where('uid', '==', uid), orderBy('createdAt', 'desc'));
                 } else {
                     q = await query(collectionRef, orderBy('createdAt', 'desc'));
                 }
@@ -48,7 +50,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
         }
 
         loadData(); // We need to call the function to execute it, it will only be executed if the dependencies change (doCollection, search, uid, cancelled).
-    }, [docCollection, documents, search, uid, cancelled]);
+    }, [docCollection, search, uid, cancelled]);
 
     // Deal with memory leaks
     // The return function will be executed when the component is unmounted. It prevents the component from trying to set the state after it has been unmounted.
