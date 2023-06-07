@@ -41,11 +41,12 @@
 
 @media (max-width: 767px) {
     .post_detail {
+        margin-left: 2em;
         margin-bottom: 1em;
     }
 
     .post_detail img {
-        max-width: 100%;
+        max-width: 80%;
         border-radius: 10px;
     }
 
