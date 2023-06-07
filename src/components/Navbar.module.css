@@ -1,10 +1,23 @@
 .navbar {
+    width: 100%;
     display: flex;
     box-shadow: rgba(0, 0, 0, 0.842) 0px -2px 10px 0px;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em 2em;
+    /* padding: 0.5em 2em; */
     background: linear-gradient(135deg, #04422e 0%, #62ce7d 100%);
+}
+
+.navbar .leftSide {
+    flex: 50%;
+}
+
+.navbar .rightSide {
+    flex: 50%;
+}
+
+.navbar .rightSide .links {
+    max-height: 80px;
 }
 
 .brand {
@@ -32,14 +45,68 @@
     padding: 0.4em 0.6em;
 }
 
+.rightSide .links .links_list li li button {
+    display: none;
+}
+
+.navbar .rightSide .links #hidden {
+    display: flex;
+}
+
 .links_list .active {
     color: #191a19;
 }
 
 .logo_img {
+    margin: 3px 8px;
     width: 100px;
     height: 60px;
     border-radius: 15px;
     object-fit: cover;
     margin-right: 1em;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar .rightSide .links .links_list li a {
+        font-size: 0.8em;
+        padding: 0.4em 0.4em;
+    }
+
+    .navbar .rightSide .links .links_list li button {
+        font-size: 0.8em;
+        padding: 0.4em 0.4em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar .rightSide .links .links_list li a {
+        font-size: 0.7em;
+        padding: 0.4em 0.2em;
+    }
+
+    .navbar .rightSide .links .links_list li button {
+        font-size: 0.7em;
+        padding: 0.4em 0.2em;
+    }
+
+    .navbar .rightSide .links .links_list li li button {
+        display: flex;
+        margin-left: 60px;
+    }
+
+    .navbar .rightSide .links .links_list li a {
+        display: none;
+    }
+
+    .navbar .rightSide .links .links_list li button {
+        display: none;
+    }
+
+    .navbar .rightSide .links #hidden {
+        position: absolute;
+        top: 80px;
+        height: 230px;
+        width: 100%;
+        background: linear-gradient(135deg, #04422e 0%, #62ce7d 100%);
+    }
 }

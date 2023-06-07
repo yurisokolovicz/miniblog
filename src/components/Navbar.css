@@ -1,0 +1,130 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.842) 0px -2px 10px 0px;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 0.5em 2em; */
+    background: linear-gradient(90deg, #04422e 0%, #62ce7d 100%);
+}
+
+.navbar .leftSide {
+    flex: 40%;
+}
+
+.navbar .rightSide button {
+    display: none;
+    margin-right: 2em;
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar .rightSide button {
+        display: flex;
+    }
+}
+
+.navbar .middleSide {
+    flex: 50%;
+    margin-right: -10%;
+}
+
+.navbar .rightSide {
+    flex: 10%;
+}
+
+.navbar .middleSide .links {
+    max-height: 80px;
+}
+
+.brand {
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.brand span {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.links_list {
+    display: flex;
+    list-style: none;
+}
+
+.links_list li {
+    margin-right: 1em;
+}
+
+.links_list li a {
+    color: #fff;
+    font-weight: 700;
+    padding: 0.4em 0.6em;
+}
+
+.middleSide .links .links_list li li button {
+    display: none;
+}
+
+.middleSide .links #hidden {
+    display: flex;
+}
+
+.links_list .active {
+    color: #0e0f0f;
+}
+
+.logo_img {
+    margin: 3px 8px;
+    width: 100px;
+    height: 60px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-right: 1em;
+}
+
+.navbar .middleSide .links .links_list li a {
+    display: flex;
+}
+
+.navbar .middleSide .links .links_list li button {
+    display: flex;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar .middleSide .links .links_list li a {
+        font-size: 0.7em;
+        padding: 0.4em 0.2em;
+    }
+
+    .navbar .middleSide .links .links_list li button {
+        font-size: 0.7em;
+        padding: 0.4em 0.2em;
+    }
+
+    .navbar .middleSide .links .links_list li a {
+        display: none;
+    }
+
+    .navbar .middleSide .links .links_list li button {
+        display: none;
+    }
+
+    .navbar .middleSide .links #hidden {
+        position: absolute;
+        top: 50px;
+        left: -20px;
+        height: 230px;
+        width: 100%;
+        background: linear-gradient(90deg, #04422e 0%, #62ce7d 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.navbar .middleSide .links #hidden li a,
+.navbar .middleSide .links #hidden li button {
+    font-size: 1.2em;
+    display: flex;
+}

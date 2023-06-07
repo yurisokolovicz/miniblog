@@ -5,6 +5,8 @@
 .post_detail img {
     max-width: 600px;
     border-radius: 50px;
+    display: block; /* alinhar imagem ao centro */
+    margin: 0 auto; /* alinhar imagem ao centro */
 }
 
 .post_detail h2 {
