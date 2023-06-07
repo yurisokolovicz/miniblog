@@ -15,6 +15,7 @@
 .navbar .rightSide button {
     display: none;
     margin-right: 2em;
+    scale: 2;
 }
 
 @media only screen and (max-width: 800px) {
@@ -79,7 +80,7 @@
     height: 60px;
     border-radius: 15px;
     object-fit: cover;
-    margin-right: 1em;
+    margin-left: 2em;
 }
 
 .navbar .middleSide .links .links_list li a {

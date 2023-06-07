@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { useAuthentication } from '../hooks/useAuthentication'; // pra fazer logout
 import { useAuthValue } from '../context/AuthContext'; // context
 
+import { FaBars } from 'react-icons/fa'; // react icons
 import Logo from '../assets/logo.jpg';
 // import styles from './Navbar.module.css';
 import './Navbar.css';
@@ -55,17 +56,14 @@ const Navbar = () => {
                                 <button onClick={logout}>Logout</button>
                             </li>
                         )}
-                        {/* <li>
-                            <li>
-                                <button onClick={() => setShowLinks(!showLinks)}>Open</button>
-                            </li>
-                        </li> */}
                     </ul>
                 </div>
             </div>
             <div className="rightSide">
                 <div className="links">
-                    <button onClick={() => setShowLinks(!showLinks)}>Open</button>
+                    <button onClick={() => setShowLinks(!showLinks)}>
+                        <FaBars />
+                    </button>
                 </div>
             </div>
         </nav>
