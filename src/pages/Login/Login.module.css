@@ -5,3 +5,13 @@
 .login p {
     color: #aaa;
 }
+
+@media (max-width: 767px) {
+    .login {
+        margin-top: 3em;
+    }
+    .login h1 {
+        margin-left: 1em;
+        font-size: 1.5em;
+    }
+}

@@ -15,3 +15,15 @@
     margin-top: 15px;
     padding: 5px 5px;
 }
+
+@media only screen and (max-width: 800px) {
+    .about {
+        max-width: 80%;
+        margin-left: 40px;
+        margin-top: 2em;
+    }
+
+    .about h1 {
+        font-size: 1.5em;
+    }
+}

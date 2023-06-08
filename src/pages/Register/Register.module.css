@@ -5,3 +5,14 @@
 .register p {
     color: #aaa;
 }
+
+@media (max-width: 767px) {
+    .register {
+        margin-top: 2em;
+    }
+
+    .register h1 {
+        margin-left: 1em;
+        font-size: 1.5em;
+    }
+}

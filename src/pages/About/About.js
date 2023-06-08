@@ -5,8 +5,8 @@ import styles from './About.module.css';
 const About = () => {
     return (
         <div className={styles.about}>
-            <h2>About the Change Adventures</h2>
-            <p>This project was built using React on the Front-end and Firebase on the back-end.</p>
+            <h1>About the Change Adventures</h1>
+            <p>This project was built by Yuri Sokolovicz using React on the Front-end and Firebase on the back-end.</p>
             <Link to="/post/create" className="btn">
                 Create Post
             </Link>

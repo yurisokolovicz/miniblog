@@ -15,6 +15,10 @@ const Navbar = () => {
 
     const [showLinks, setShowLinks] = useState(false);
 
+    const handleClickHambuguer = () => {
+        setShowLinks(!showLinks);
+    };
+
     return (
         <nav className="navbar">
             <div className="leftSide">
@@ -26,30 +30,42 @@ const Navbar = () => {
                 <div className="links">
                     <ul className="links_list" id={showLinks ? 'hidden' : ''}>
                         <li>
-                            <NavLink to="/">Home</NavLink>
+                            <NavLink to="/" onClick={handleClickHambuguer}>
+                                Home
+                            </NavLink>
                         </li>
                         {!user && (
                             <>
                                 <li>
-                                    <NavLink to="/login">Login</NavLink>
+                                    <NavLink to="/login" onClick={handleClickHambuguer}>
+                                        Login
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/register">Register</NavLink>
+                                    <NavLink to="/register" onClick={handleClickHambuguer}>
+                                        Register
+                                    </NavLink>
                                 </li>
                             </>
                         )}
                         {user && (
                             <>
                                 <li>
-                                    <NavLink to="/post/create">Publish</NavLink>
+                                    <NavLink to="/post/create" onClick={handleClickHambuguer}>
+                                        Publish
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard">Dashboard</NavLink>
+                                    <NavLink to="/dashboard" onClick={handleClickHambuguer}>
+                                        Dashboard
+                                    </NavLink>
                                 </li>
                             </>
                         )}
                         <li>
-                            <NavLink to="/about">About</NavLink>
+                            <NavLink to="/about" onClick={handleClickHambuguer}>
+                                About
+                            </NavLink>
                         </li>
                         {user && (
                             <li>

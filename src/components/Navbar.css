@@ -80,7 +80,7 @@
     height: 60px;
     border-radius: 15px;
     object-fit: cover;
-    margin-left: 2em;
+    margin-left: 1.5em;
 }
 
 .navbar .middleSide .links .links_list li a {
@@ -100,7 +100,9 @@
 
     .navbar .middleSide .links .links_list li button {
         font-size: 0.7em;
-        padding: 0.4em 0.2em;
+        padding: 0em 0.2em;
+        color: rgb(182, 194, 14);
+        font-weight: 900;
     }
 
     .navbar .middleSide .links .links_list li a {
@@ -112,10 +114,11 @@
     }
 
     .navbar .middleSide .links #hidden {
+        /* padding-left: -40px !important; */
         position: absolute;
-        top: 50px;
+        top: 52.5px;
         left: -20px;
-        height: 230px;
+        height: 210px;
         width: 100%;
         background: linear-gradient(90deg, #04422e 0%, #62ce7d 100%);
         display: flex;
