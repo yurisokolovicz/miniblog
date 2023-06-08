@@ -23,3 +23,23 @@
     width: 60%;
     border-radius: 50px;
 }
+
+@media only screen and (max-width: 800px) {
+    .post_container {
+        margin-left: 5%;
+        width: 90%;
+        margin-top: 2em;
+    }
+    .post_container h1 {
+        font-size: 1.5em;
+        margin-bottom: 1em;
+    }
+
+    .post_container img {
+        width: 80%;
+    }
+
+    .post_container .paragraph {
+        padding: 0 1em;
+    }
+}

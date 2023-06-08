@@ -41,13 +41,15 @@
 
 @media (max-width: 767px) {
     .post_detail {
+        padding: 0 1em;
         margin-left: 2em;
+        margin-right: 1em;
         margin-bottom: 1em;
     }
 
     .post_detail img {
-        max-width: 80%;
-        border-radius: 10px;
+        max-width: 100%;
+        border-radius: 50px;
     }
 
     .post_detail h2 {
