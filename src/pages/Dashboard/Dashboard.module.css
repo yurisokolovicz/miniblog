@@ -56,3 +56,23 @@
     padding: 4px 10px;
     font-size: 0.7em;
 }
+
+@media only screen and (max-width: 800px) {
+    .dashboard {
+        margin-top: 1em;
+    }
+    .dashboard h2 {
+        font-size: 1.5em;
+    }
+
+    .post_header,
+    .post_row {
+        width: 60%;
+    }
+    .post_row button,
+    .post_row a {
+        margin: 7px 7px;
+        padding: 5px 10px;
+        font-size: 0.7em;
+    }
+}

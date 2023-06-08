@@ -10,3 +10,12 @@
     color: #aaa;
     margin-bottom: 2em;
 }
+
+@media only screen and (max-width: 800px) {
+    .create_post {
+        margin-top: 3em;
+    }
+    .create_post h2 {
+        font-size: 1.5em;
+    }
+}
